@@ -178,13 +178,13 @@ Plus : 暂时不考虑node-sass这个包，安装起来太复杂，以后再考�
 
 2017/3/27：
 之前引用css成功但样式无法加载的问题已解决，原因我估计是在webpack.config.js里的loaders写错了，之前写的是：
-
+```
 {test : /\.css$/, loader : ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })}
-
+```
 现在改为：
-
+```
 {test : /\.css$/, loader : "style-loader!css-loader"}
-
+```
 样式成功被自动修改
 
 Vue-router+Webpack
